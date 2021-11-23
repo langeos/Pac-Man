@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using MiniGui;
 
 namespace Pac_Man
@@ -12,7 +13,6 @@ namespace Pac_Man
             
             Menu start = new();
             start.Configure(new string[] { "Play","Scoreboard","Exit"});
-
 
             int choice;
             do
@@ -28,6 +28,15 @@ namespace Pac_Man
                         break;
 
                     case 1:
+                        Menu.Heading("Scoreboard");
+                        Menu.CentercursorX(20);
+                        Menu.CentercursorY();
+                        Menu.CursorUp(5);
+                        foreach (string line in File.ReadLines("scoreboard/scoreboard.txt"))
+                        {
+                            Menu.WriteCenterOneLineLower(line);
+                        }
+                        Console.ReadKey();
                         break;
 
                     case 2:

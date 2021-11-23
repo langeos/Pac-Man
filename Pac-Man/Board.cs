@@ -13,7 +13,7 @@ namespace Pac_Man
 
         public int Speed { get => speed; private set => speed = value; }
 
-
+        
         /// <summary>
         /// Set multipler to current game by given hard level
         /// </summary>

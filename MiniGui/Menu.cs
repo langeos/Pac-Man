@@ -129,6 +129,24 @@ namespace MiniGui
             Console.SetCursorPosition(Console.BufferWidth / 2 - lenght / 2, Console.CursorTop);
         }
 
+        /// <summary>
+        /// Move cursor vertically up
+        /// </summary>
+        /// <param name="x">Number of lines</param>
+        static public void CursorUp(int x)
+        {
+            Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop-x);
+        }
+
+        /// <summary>
+        /// Move cursor vertically down
+        /// </summary>
+        /// <param name="x">Number of lines</param>
+        static public void CursorDown(int x)
+        {
+            Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop + x);
+        }
+
 
         /// <summary>
         /// Erase currend area in cursor position
