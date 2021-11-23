@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Pac_Man</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MiniGui\MiniGui.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="mobs\" />
+    <None Remove="BoardObjects\" />
+    <None Remove="Music\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mobs\" />
+    <Folder Include="BoardObjects\" />
+    <Folder Include="Music\" />
+  </ItemGroup>
+</Project>
