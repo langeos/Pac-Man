@@ -1,5 +1,6 @@
 Patryk 5600
 ;; 4860
+ll 4200
 Ola 4200
 Patryk 3920
 dffs 2840
@@ -7,4 +8,3 @@ Patryczek 2660
 dsa 2040
 Langesos 1970
 plp 1904
-saa 1630

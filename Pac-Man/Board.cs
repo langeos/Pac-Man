@@ -268,7 +268,6 @@ namespace Pac_Man
             {
                 if(i < pac_man.Lifes) Console.Write(" <3");
                 else Console.Write("   ");
-
             }
         }
 
