@@ -10,11 +10,11 @@ namespace Pac_Man.Mobs
         private int boost_time;
         private int killed_during_boost;
 
-        //Signs of PacMan to any direction
+        
         static public string sign_up = "V", sign_down = "\u15E3", sign_right = "\u15E7", sign_left =  "\u15E4";
 
         //Array with characters being used to animate current direction
-        string[] directionalsigns = { sign_up, sign_down, sign_right, sign_left, "^", ">","<"};
+        string[] directionalsigns = { sign_up, sign_down, sign_right, sign_left,"v", "^", ">","<"};
 
 
         /// <summary>
@@ -22,6 +22,14 @@ namespace Pac_Man.Mobs
         /// </summary>
         public PacMan():base(13,24)
         {
+            if (OperatingSystem.IsWindows())
+            {
+                sign_up = "V";
+                sign_down = "^";
+                sign_right = "<";
+                sign_left = ">";
+            }
+                
             color = ConsoleColor.Yellow;
             Lifes = 3;
             Sign = sign_right;

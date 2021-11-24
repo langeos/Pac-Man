@@ -1,4 +1,6 @@
-﻿namespace Pac_Man.BoardObjects
+﻿using System;
+
+namespace Pac_Man.BoardObjects
 {
     public class PowerOrb:BoardObject
     {
@@ -14,8 +16,9 @@
         /// </summary>
         public PowerOrb()
         {
-            color = System.ConsoleColor.Green;
-            sign = "⌾";
+            color = ConsoleColor.Green;
+            if (OperatingSystem.IsMacOS()) sign = "⌾";
+            else sign = "@";
             penetrable = true;
         }
 
@@ -26,8 +29,9 @@
         /// <param name="y">Y axis</param>
         public PowerOrb(int x, int y) : base(x, y)
         {
-            color = System.ConsoleColor.Green;
-            sign = "⌾";
+            color = ConsoleColor.Green;
+            if (OperatingSystem.IsMacOS()) sign = "⌾";
+            else sign = "@";
             penetrable = true;
             Draw();
         }
