@@ -57,7 +57,7 @@ namespace Pac_Man
             int counter = 0, tpcounter = 0;
 
             //Read from file every sign and changing it into specific objects
-            foreach (string line in File.ReadLines("map/map.txt"))
+            foreach (string line in File.ReadLines("../../../map/map.txt"))
             {
                 Console.SetCursorPosition(0, 0);
                 for (int i = 0; i < mapwidth; i++)

@@ -75,7 +75,7 @@ namespace Pac_Man
         {
             List<KeyValuePair<string, double>> Top10 = new List<KeyValuePair<string, double>>();
             
-            foreach (string line in File.ReadLines("scoreboard/scoreboard.txt"))
+            foreach (string line in File.ReadLines("../../../scoreboard/scoreboard.txt"))
             {
                 Top10.Add(new KeyValuePair<string, double>(line.Split()[0], double.Parse(line.Split()[1])));
             }
@@ -85,11 +85,11 @@ namespace Pac_Man
             Top10.Sort((x, y) => x.Value.CompareTo(y.Value));
             Top10.Reverse();
 
-            File.WriteAllText("scoreboard/scoreboard.txt", string.Empty);
+            File.WriteAllText("../../../scoreboard/scoreboard.txt", string.Empty);
 
             for(int i = 0; i < Top10.Count && i < 10; i++)
             {
-                File.AppendAllText("scoreboard/scoreboard.txt", $"{Top10[i].Key} {Top10[i].Value}\n");
+                File.AppendAllText("../../../scoreboard/scoreboard.txt", $"{Top10[i].Key} {Top10[i].Value}\n");
             }
 
         }

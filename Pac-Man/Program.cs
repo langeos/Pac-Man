@@ -32,7 +32,7 @@ namespace Pac_Man
                         Menu.CentercursorX(20);
                         Menu.CentercursorY();
                         Menu.CursorUp(5);
-                        foreach (string line in File.ReadLines("scoreboard/scoreboard.txt"))
+                        foreach (string line in File.ReadLines("../../../scoreboard/scoreboard.txt"))
                         {
                             Menu.WriteCenterOneLineLower(line);
                         }
