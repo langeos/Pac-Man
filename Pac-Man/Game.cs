@@ -53,13 +53,13 @@ namespace Pac_Man
             //Create new player
             Player player = new();
 
-
             //Show heading for beginning of the game
             Menu.Heading("LETS DESTROY SOME GHOSTS", Console.WindowHeight / 2);
             System.Threading.Thread.Sleep(1000);
 
-            //If OS is Windows set console window size
-            if (OperatingSystem.IsWindows()) Console.SetWindowSize(30, 35);
+            if (OperatingSystem.IsWindows()){
+                Console.SetWindowSize(Console.WindowWidth, 40);
+            }
 
             //Create board object, play on it, and check the result of the game
             Board board = new(speed);
@@ -99,7 +99,6 @@ namespace Pac_Man
         /// </summary>
         private void Ending(bool won, Player player)
         {
-            if (OperatingSystem.IsWindows()) { Console.SetWindowSize(100,50); }
 
             if (won == true)
             {

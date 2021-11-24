@@ -49,7 +49,7 @@ namespace MiniGui
             {
                 //Center cursor
                 CentercursorX(longest);
-                Console.SetCursorPosition(Console.CursorLeft, Console.BufferHeight / 2 - elements.Length / 2);
+                Console.SetCursorPosition(Console.CursorLeft, Console.WindowHeight / 2 - elements.Length / 2);
 
                 //Color rows especially currently selected one.
                 for (int i = 0; i < elements.Length; i++)
@@ -109,7 +109,7 @@ namespace MiniGui
         /// </summary>
         static public void CentercursorX()
         {
-            Console.SetCursorPosition(Console.BufferWidth / 2, Console.CursorTop);
+            Console.SetCursorPosition(Console.WindowWidth / 2, Console.CursorTop);
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace MiniGui
         /// <param name="lenght">Lenght of string</param>
         static public void CentercursorX(int lenght)
         {
-            Console.SetCursorPosition(Console.BufferWidth / 2 - lenght / 2, Console.CursorTop);
+            Console.SetCursorPosition(Console.WindowWidth / 2 - lenght / 2, Console.CursorTop);
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace MiniGui
         static public void WriteCenterOneLineLower(string str)
         {
             int lenght = str.Length;
-            Console.SetCursorPosition(Console.BufferWidth / 2 - lenght / 2, Console.CursorTop+1);
+            Console.SetCursorPosition(Console.WindowWidth / 2 - lenght / 2, Console.CursorTop+1);
             Console.Write(str);
         }
 

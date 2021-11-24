@@ -8,8 +8,6 @@ namespace Pac_Man
     {
         static void Main(string[] args)
         {
-            //If OS is Windows set console window size
-            if(OperatingSystem.IsWindows()) Console.SetWindowSize(50, 30);
             
             Menu start = new();
             start.Configure(new string[] { "Play","Scoreboard","Exit"});
