@@ -264,7 +264,12 @@ namespace Pac_Man
             Console.SetCursorPosition(0, 33);
             Console.WriteLine($"Score: {player.Points}");
             Console.Write($"Lifes: ");
-            for (int i = 0; i < pac_man.Lifes; i++) Console.Write(" <3");
+            for (int i = 0; i < 3; i++)
+            {
+                if(i < pac_man.Lifes) Console.Write(" <3");
+                else Console.Write("   ");
+
+            }
         }
 
 

@@ -39,7 +39,6 @@ namespace Pac_Man
         /// <param name="objects"></param>
         public void DrawWholeMap()
         {
-            Console.Clear();
             foreach (BoardObject obj in objects)
             {
                 obj.Draw();

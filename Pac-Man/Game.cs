@@ -59,6 +59,7 @@ namespace Pac_Man
 
             if (OperatingSystem.IsWindows()){
                 Console.SetWindowSize(Console.WindowWidth, 35);
+                Console.SetBufferSize(Console.WindowWidth, 35);
             }
 
             //Create board object, play on it, and check the result of the game
