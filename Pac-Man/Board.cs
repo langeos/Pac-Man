@@ -68,7 +68,7 @@ namespace Pac_Man
             ConsoleKeyInfo choice;
             do
             {
-                choice = Console.ReadKey(true);
+                choice = Console.ReadKey();
                 switch (choice.Key)
                 {
                     case ConsoleKey.UpArrow:
@@ -92,6 +92,16 @@ namespace Pac_Man
                     case ConsoleKey.LeftArrow:
                         dir = 3;
                         prevdir = DoNextMapEvent(dir, prevdir, pac_man, player);
+                        break;
+
+                    case ConsoleKey.Spacebar:
+                        MiniGui.Menu.CentercursorY();
+                        MiniGui.Menu.CentercursorX();
+                        MiniGui.Menu.WriteCenterOneLineLower("PAUSE");
+                        break;
+
+                    default:
+                        DoNextMapEvent(prevdir, prevdir, pac_man, player);
                         break;
                 }
 
@@ -199,7 +209,8 @@ namespace Pac_Man
                     System.Threading.Thread.Sleep(Speed);
                 }
 
-
+                if (pac_man.Boost_time > 0) pac_man.Boost_time--;
+                if (pac_man.Boost_time == 0 && pac_man.Boosted == true) pac_man.DeBoost();
                 if (Won()) break;
                 if (pac_man.Lifes == 0) break;
 
@@ -231,15 +242,22 @@ namespace Pac_Man
             {
                 map.objects[GetNextStep(pac_man, prevdir)[0], GetNextStep(pac_man, prevdir)[1]] = new ClearSpace();
                 player.AddPoints(PowerOrb.Value * multipler);
+                pac_man.Boost();
             }
 
             pac_man.Move(dir);
 
             foreach (Ghost ghost in Ghost.ghosts)
             {
-                if (pac_man == ghost)
+                if (pac_man == ghost && pac_man.Boosted == false)
                 {
                     pac_man.DecrementLife();
+                }
+                else if (pac_man == ghost && pac_man.Boosted == true)
+                {
+                    pac_man.Killed_during_boost++;
+                    player.AddPoints(200 * multipler * pac_man.Killed_during_boost);
+                    ghost.Dead();
                 }
             }
 
@@ -256,7 +274,16 @@ namespace Pac_Man
             {
                 UpdateNextstep(nextstep, ghost);
                 ghost.Move(nextstep);
-                if (pac_man == ghost) pac_man.DecrementLife();
+                if (pac_man == ghost && pac_man.Boosted == false)
+                {
+                    pac_man.DecrementLife();
+                }
+                else if (pac_man == ghost && pac_man.Boosted == true)
+                {
+                    pac_man.Killed_during_boost++;
+                    player.AddPoints(200 * multipler*pac_man.Killed_during_boost);
+                    ghost.Dead();
+                }
             }
 
             

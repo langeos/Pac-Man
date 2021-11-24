@@ -108,11 +108,18 @@ namespace Pac_Man.Mobs
             return temp[index];
         }
 
-
-        protected override void Dead()
+        public void Dead()
         {
-
+            for (int k = 0; k < 3; k++)
+            {
+                Draw(" ");
+                System.Threading.Thread.Sleep(150);
+                Draw("Ä");
+                System.Threading.Thread.Sleep(150);
+            }
+            x_axis = 13;
+            y_axis = 15;
+            Draw(Sign);
         }
-
     }
 }

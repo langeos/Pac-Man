@@ -45,11 +45,6 @@ namespace Pac_Man.Mobs
             protected set
             {
                 lifes = value;
-                if (lifes == 0)
-                {
-                    Dead();
-                }
-                
             }
         }
 
@@ -184,7 +179,5 @@ namespace Pac_Man.Mobs
         }
 
 
-        //Kill the creature
-        protected abstract void Dead();
     }
 }

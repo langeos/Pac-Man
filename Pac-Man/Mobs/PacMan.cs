@@ -6,7 +6,9 @@ namespace Pac_Man.Mobs
 {
     public class PacMan:Creature
     {
-        public bool Boosted = false;
+        private bool boosted;
+        private int boost_time;
+        private int killed_during_boost;
 
         //Signs of PacMan to any direction
         static public string sign_up = "V", sign_down = "\u15E3", sign_right = "\u15E7", sign_left =  "\u15E4";
@@ -40,6 +42,10 @@ namespace Pac_Man.Mobs
                 return position;
             }
         }
+
+        public bool Boosted { get => boosted; private set => boosted = value; }
+        public int Boost_time { get => boost_time; set => boost_time = value; }
+        public int Killed_during_boost { get => killed_during_boost; set => killed_during_boost = value; }
 
 
         /// <summary>
@@ -114,11 +120,13 @@ namespace Pac_Man.Mobs
                 default:
                     break;
             }
+            
         }
 
         public void DecrementLife()
         {
             Lifes -= 1;
+            DeBoost();
             for (int k = 0; k < 5; k++)
             {
                 Draw(" ");
@@ -131,10 +139,20 @@ namespace Pac_Man.Mobs
             Draw("O");
         }
 
-
-        protected override void Dead()
+        public void Boost()
         {
-
+            Boosted = true;
+            color = ConsoleColor.DarkMagenta;
+            boost_time = 30;
         }
+
+        public void DeBoost()
+        {
+            Boosted = false;
+            color = ConsoleColor.Yellow;
+            Killed_during_boost = 0;
+        }
+
+
     }
 }
