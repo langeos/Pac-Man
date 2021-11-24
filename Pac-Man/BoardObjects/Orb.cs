@@ -1,4 +1,6 @@
-﻿namespace Pac_Man.BoardObjects
+﻿using System;
+
+namespace Pac_Man.BoardObjects
 {
     public class Orb:BoardObject
     {
@@ -15,8 +17,9 @@
         /// </summary>
         public Orb()
         {
-            color = System.ConsoleColor.Gray;
+            color = ConsoleColor.Gray;
             sign = "•";
+            if (OperatingSystem.IsWindows()) sign = "*";
             penetrable = true;
         }
 
@@ -28,8 +31,9 @@
         /// <param name="y">Y axis</param>
         public Orb(int x, int y) : base(x, y)
         {
-            color = System.ConsoleColor.Gray;
+            color = ConsoleColor.Gray;
             sign = "•";
+            if (OperatingSystem.IsWindows()) sign = "*";
             penetrable = true;
             Draw();
         }

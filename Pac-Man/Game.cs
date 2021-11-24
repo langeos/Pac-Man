@@ -99,7 +99,7 @@ namespace Pac_Man
         /// </summary>
         private void Ending(bool won, Player player)
         {
-            if (OperatingSystem.IsWindows()) { Console.SetWindowSize(50, 30); }
+            if (OperatingSystem.IsWindows()) { Console.SetWindowSize(100,50); }
 
             if (won == true)
             {
