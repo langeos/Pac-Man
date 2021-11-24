@@ -8,13 +8,13 @@ namespace Pac_Man.Mobs
     {
         private bool boosted;
         private int boost_time;
-        private int killed_during_boost;
+        private int killed_during_boost; //Variable to
 
         
         static public string sign_up = "V", sign_down = "\u15E3", sign_right = "\u15E7", sign_left =  "\u15E4";
 
         //Array with characters being used to animate current direction
-        string[] directionalsigns = { sign_up, sign_down, sign_right, sign_left,"v", "^", ">","<"};
+        string[] directionalsigns = { sign_up, sign_down, sign_right, sign_left,"V", "^", ">","<"};
 
 
         /// <summary>
@@ -22,6 +22,7 @@ namespace Pac_Man.Mobs
         /// </summary>
         public PacMan():base(13,24)
         {
+            //If os is windows, change directional signs
             if (OperatingSystem.IsWindows())
             {
                 sign_up = "V";
