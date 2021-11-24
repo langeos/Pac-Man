@@ -58,7 +58,7 @@ namespace Pac_Man
             System.Threading.Thread.Sleep(1000);
 
             if (OperatingSystem.IsWindows()){
-                Console.SetWindowSize(Console.WindowWidth, 40);
+                Console.SetWindowSize(Console.WindowWidth, 35);
             }
 
             //Create board object, play on it, and check the result of the game
