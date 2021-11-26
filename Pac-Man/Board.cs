@@ -1,14 +1,15 @@
 ﻿using System;
 using Pac_Man.BoardObjects;
 using Pac_Man.Mobs;
+using MiniGui;
 
 namespace Pac_Man
 {
     public class Board
     {
-        private int speed;
-        private double multipler;
-        public BoardObject[] nextstep = new BoardObject[4];
+        int speed;
+        double multipler;
+        BoardObject[] nextstep = new BoardObject[4];
         Map map;
 
         public int Speed { get => speed; private set => speed = value; }
@@ -20,7 +21,6 @@ namespace Pac_Man
         /// <param name="speed"></param>
         public Board(int speed)
         {
-
             Speed = speed;
             switch (Speed)
             {
@@ -95,9 +95,8 @@ namespace Pac_Man
                         break;
 
                     case ConsoleKey.Spacebar:
-                        MiniGui.Menu.CentercursorY();
-                        MiniGui.Menu.CentercursorX();
-                        MiniGui.Menu.WriteCenterOneLineLower("PAUSE");
+                        BetterCursor.Centercursor();
+                        BetterCursor.WriteCenterOneLineLower("PAUSE");
                         break;
 
                     default:

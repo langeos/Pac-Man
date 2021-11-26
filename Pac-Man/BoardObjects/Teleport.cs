@@ -39,7 +39,7 @@ namespace Pac_Man.BoardObjects
         /// <param name="creature"></param>
         static public void TpCreature(BoardObject teleport, Mobs.Creature creature)
         {
-            Menu.Clear_Current_Area(teleport.Position[0], teleport.Position[1]);
+            BetterCursor.Clear_Current_Area(teleport.Position[0], teleport.Position[1]);
 
             if (teleport == teleports[0])
             {

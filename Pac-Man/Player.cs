@@ -67,7 +67,7 @@ namespace Pac_Man
                 Menu.Heading("Enter your nickname", Console.WindowHeight / 2 - 2);
                 Console.SetCursorPosition(1, Console.WindowHeight);
                 Console.Write("Max 30 characters, no spaces");
-                Menu.CentercursorX(43);
+                BetterCursor.CentercursorX(43);
                 Console.SetCursorPosition(Console.CursorLeft, Console.WindowHeight / 2);
                 nickname = Console.ReadLine();
             } while (nickname.Length > 30 || nickname.Length <= 0 || nickname.Contains(' '));

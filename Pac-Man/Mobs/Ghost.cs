@@ -6,7 +6,7 @@ namespace Pac_Man.Mobs
 {
     public class Ghost:Creature
     {
-        static public Ghost[] ghosts = new Ghost[4];
+        public static Ghost[] ghosts = new Ghost[4];
         private int previousstepfrom = 0;
         Dictionary<int, bool> AvailableDirrections = new Dictionary<int, bool>(4);
 

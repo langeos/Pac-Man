@@ -6,7 +6,7 @@ namespace Pac_Man
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             
             Menu start = new();
@@ -27,12 +27,12 @@ namespace Pac_Man
 
                     case 1:
                         Menu.Heading("Scoreboard");
-                        Menu.CentercursorX(20);
-                        Menu.CentercursorY();
-                        Menu.CursorUp(5);
+                        BetterCursor.CentercursorX(20);
+                        BetterCursor.CentercursorY();
+                        BetterCursor.CursorUp(5);
                         foreach (string line in File.ReadLines("../../../scoreboard/scoreboard.txt"))
                         {
-                            Menu.WriteCenterOneLineLower(line);
+                            BetterCursor.WriteCenterOneLineLower(line);
                         }
                         Console.ReadKey();
                         break;

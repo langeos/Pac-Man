@@ -98,7 +98,7 @@ namespace Pac_Man.Mobs
                 case 0:
                     if (y_axis > 0)
                     {
-                        Menu.Clear_Current_Area(x_axis, y_axis);
+                        BetterCursor.Clear_Current_Area(x_axis, y_axis);
                         y_axis -= 1;
                         Draw(Sign);
                     }
@@ -109,7 +109,7 @@ namespace Pac_Man.Mobs
                     if (y_axis < Console.WindowHeight - 1)
                     {
 
-                        Menu.Clear_Current_Area(x_axis, y_axis);
+                        BetterCursor.Clear_Current_Area(x_axis, y_axis);
                         y_axis += 1;
                         Draw(Sign);
                     }
@@ -119,7 +119,7 @@ namespace Pac_Man.Mobs
                 case 2:
                     if (x_axis < Console.WindowWidth - 2)
                     {
-                        Menu.Clear_Current_Area(x_axis, y_axis);
+                        BetterCursor.Clear_Current_Area(x_axis, y_axis);
                         x_axis += 1;
                         Draw(Sign);
                     }
@@ -129,7 +129,7 @@ namespace Pac_Man.Mobs
                 case 3:
                     if (x_axis > 0)
                     {
-                        Menu.Clear_Current_Area(x_axis, y_axis);
+                        BetterCursor.Clear_Current_Area(x_axis, y_axis);
                         x_axis -= 1;
                         Draw(Sign);
                     }
@@ -175,7 +175,7 @@ namespace Pac_Man.Mobs
             Console.SetCursorPosition(x_axis, y_axis);
             Console.Write(sign);
             Console.ResetColor();
-            if (OperatingSystem.IsMacOS()) Menu.HideCursor();
+            if (OperatingSystem.IsMacOS()) BetterCursor.HideCursor();
         }
 
 

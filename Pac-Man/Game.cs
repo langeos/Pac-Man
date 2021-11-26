@@ -65,6 +65,8 @@ namespace Pac_Man
             //Create board object, play on it, and check the result of the game
             Board board = new(speed);
             bool won = board.Play(player);
+
+            //End the game with given result
             Ending(won, player);
         }
 
@@ -100,29 +102,27 @@ namespace Pac_Man
         /// </summary>
         private void Ending(bool won, Player player)
         {
-
             if (won == true)
             {
                 Menu.Heading("WINNER", Console.WindowHeight / 2);
-                Menu.CentercursorY();
-                Menu.WriteCenterOneLineLower($"Congratulations {player.Nickname}!");
+                BetterCursor.CentercursorY();
+                BetterCursor.WriteCenterOneLineLower($"Congratulations {player.Nickname}!");
             }
             else
             {
                 Menu.Heading("LOOSER", Console.WindowHeight / 2);
-                Menu.CentercursorY();
-                Menu.WriteCenterOneLineLower($"Good luck next time {player.Nickname}!");
+                BetterCursor.CentercursorY();
+                BetterCursor.WriteCenterOneLineLower($"Good luck next time {player.Nickname}!");
             }
 
             SaveScoreboard(player);
 
-            Menu.WriteCenterOneLineLower($"You got {player.Points} points");
-            if (OperatingSystem.IsMacOS()) Menu.HideCursor();
+            BetterCursor.WriteCenterOneLineLower($"You got {player.Points} points");
+            if (OperatingSystem.IsMacOS()) BetterCursor.HideCursor();
             Console.ReadKey();
 
             Menu.Heading("LEAVING TO MAIN MENU", Console.WindowHeight / 2);
             System.Threading.Thread.Sleep(700);
-
 
         }
     }

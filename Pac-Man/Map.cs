@@ -19,8 +19,8 @@ namespace Pac_Man
             objects = new BoardObject[mapheight, mapwidth];
 
             Console.Clear();
-            Menu.CentercursorX(14);
-            Menu.CentercursorY();
+            BetterCursor.CentercursorX(14);
+            BetterCursor.CentercursorY();
             Console.Write("Reading map");
             for(int i = 0; i < 5; i++)
             {
@@ -43,7 +43,7 @@ namespace Pac_Man
             {
                 obj.Draw();
             }
-            Menu.HideCursor();
+            BetterCursor.HideCursor();
         }
 
 
@@ -89,7 +89,7 @@ namespace Pac_Man
                 counter++;
             }
 
-            Menu.HideCursor();
+            BetterCursor.HideCursor();
             return objects;
         }
     }

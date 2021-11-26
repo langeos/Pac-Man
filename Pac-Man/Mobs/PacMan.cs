@@ -6,15 +6,15 @@ namespace Pac_Man.Mobs
 {
     public class PacMan:Creature
     {
-        private bool boosted;
-        private int boost_time;
-        private int killed_during_boost; //Variable to
+        bool boosted;
+        int boost_time;
+        int killed_during_boost; //Variable to
 
         
-        static public string sign_up = "V", sign_down = "\u15E3", sign_right = "\u15E7", sign_left =  "\u15E4";
+        string sign_up = "V", sign_down = "\u15E3", sign_right = "\u15E7", sign_left =  "\u15E4";
 
         //Array with characters being used to animate current direction
-        string[] directionalsigns = { sign_up, sign_down, sign_right, sign_left,"V", "^", ">","<"};
+        string[] directionalsigns = { "\u15E3", "\u15E7", "\u15E4","V", "^", ">","<"};
 
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Pac_Man.Mobs
                 case 0:
                     if (y_axis > 0)
                     {
-                        Menu.Clear_Current_Area(x_axis, y_axis);
+                        BetterCursor.Clear_Current_Area(x_axis, y_axis);
                         y_axis -= 1;
                         Draw(Sign, sign_up);
                     }
@@ -100,7 +100,7 @@ namespace Pac_Man.Mobs
                     if (y_axis < Console.WindowHeight - 1)
                     {
 
-                        Menu.Clear_Current_Area(x_axis, y_axis);
+                        BetterCursor.Clear_Current_Area(x_axis, y_axis);
                         y_axis += 1;
                         Draw(Sign, sign_down);
                     }
@@ -110,7 +110,7 @@ namespace Pac_Man.Mobs
                 case 2:
                     if (x_axis < Console.WindowWidth - 2)
                     {
-                        Menu.Clear_Current_Area(x_axis, y_axis);
+                        BetterCursor.Clear_Current_Area(x_axis, y_axis);
                         x_axis += 1;
                         Draw(Sign, sign_right);
                     }
@@ -120,7 +120,7 @@ namespace Pac_Man.Mobs
                 case 3:
                     if (x_axis > 0)
                     {
-                        Menu.Clear_Current_Area(x_axis, y_axis);
+                        BetterCursor.Clear_Current_Area(x_axis, y_axis);
                         x_axis -= 1;
                         Draw(Sign, sign_left);
                     }
